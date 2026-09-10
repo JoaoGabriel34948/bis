@@ -110,7 +110,7 @@ const fortunesDatabase = {
     ]
 };
 
-// ELEMENTOS DO DOM
+// ELEMENTOS DOM
 const stepForm = document.getElementById('step-form');
 const stepCookie = document.getElementById('step-cookie');
 const stepResult = document.getElementById('step-result');
@@ -141,13 +141,11 @@ btnPrepare.addEventListener('click', () => {
     stepCookie.classList.remove('hidden');
 });
 
-// EVENTO: Clicar no Biscoito para Quebrar
+// EVENTO: Clicar no Biscoito para Quebrar em 3D
 cookieBtn.addEventListener('click', () => {
-    const cookieContainer = cookieBtn.querySelector('.cookie-container');
-    
-    if (cookieContainer.classList.contains('open')) return;
+    if (cookieBtn.classList.contains('open')) return;
 
-    cookieContainer.classList.add('open');
+    cookieBtn.classList.add('open');
 
     const selectedFortune = generateFortune(userChoices);
     const numbers = generateLuckyNumbers();
@@ -172,13 +170,12 @@ cookieBtn.addEventListener('click', () => {
         });
 
         stepResult.classList.remove('hidden');
-    }, 800);
+    }, 850);
 });
 
 // EVENTO: Reiniciar
 btnRestart.addEventListener('click', () => {
-    const cookieContainer = cookieBtn.querySelector('.cookie-container');
-    cookieContainer.classList.remove('open');
+    cookieBtn.classList.remove('open');
 
     stepResult.classList.add('hidden');
     stepForm.classList.remove('hidden');
@@ -217,3 +214,152 @@ function generateLuckyNumbers() {
     }
     return Array.from(numbers).sort((a, b) => a - b);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
