@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biscoito da Sorte 3D Personalizado</title>
+    <title>Biscoito da Sorte Personalizado</title>
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,78 +77,59 @@
             <button id="btn-prepare" class="btn-primary">Criar Meu Biscoito da Sorte</button>
         </section>
 
-        <!-- ETAPA 2: BISCOITO 3D -->
+        <!-- ETAPA 2: BISCOITO NOVO VISUAL -->
         <section id="step-cookie" class="card hidden">
-            <p id="instruction-text" class="pulse-text">👇 Clique no biscoito para quebrá-lo em 3D 👇</p>
+            <p id="instruction-text" class="pulse-text">👇 Clique no biscoito para quebrá-lo 👇</p>
             
             <div class="cookie-stage">
                 <div class="cookie-wrapper" id="cookie-btn">
                     
-                    <div class="cookie-3d-container">
-                        
-                        <!-- Papel saindo de dentro -->
-                        <div class="paper-peek-3d"></div>
+                    <!-- Papelzinho saindo do centro -->
+                    <div class="paper-strip">SORTE</div>
 
-                        <!-- Metade Esquerda (3D Rendered) -->
-                        <div class="cookie-half left-half">
-                            <svg viewBox="0 0 240 240" class="cookie-svg-3d">
-                                <defs>
-                                    <linearGradient id="cookie3d-base-left" x1="10%" y1="0%" x2="90%" y2="100%">
-                                        <stop offset="0%" stop-color="#ffedd5" />
-                                        <stop offset="25%" stop-color="#fde047" />
-                                        <stop offset="60%" stop-color="#d97706" />
-                                        <stop offset="100%" stop-color="#78350f" />
-                                    </linearGradient>
-                                    
-                                    <radialGradient id="cookie3d-shadow-left" cx="50%" cy="50%" r="50%">
-                                        <stop offset="0%" stop-color="#451a03" stop-opacity="0.8" />
-                                        <stop offset="100%" stop-color="#451a03" stop-opacity="0" />
-                                    </radialGradient>
-
-                                    <filter id="glow-light" x="-20%" y="-20%" width="140%" height="140%">
-                                        <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
-                                    </filter>
-                                </defs>
-
-                                <!-- Corpo Principal Esquerdo -->
-                                <path d="M 120 25 C 65 25, 20 70, 20 120 C 20 170, 65 195, 115 170 C 85 130, 80 75, 120 25 Z" fill="url(#cookie3d-base-left)" filter="url(#glow-light)" />
-                                <!-- Dobra e Volume 3D -->
-                                <path d="M 120 25 C 80 75, 85 130, 115 170 C 100 155, 90 120, 110 80 Z" fill="url(#cookie3d-shadow-left)" />
-                                <!-- Brilho Superior 3D -->
-                                <path d="M 120 25 C 70 30, 30 75, 25 120 C 35 80, 75 40, 120 25 Z" fill="#ffffff" opacity="0.4" />
-                            </svg>
-                        </div>
-
-                        <!-- Metade Direita (3D Rendered) -->
-                        <div class="cookie-half right-half">
-                            <svg viewBox="0 0 240 240" class="cookie-svg-3d">
-                                <defs>
-                                    <linearGradient id="cookie3d-base-right" x1="90%" y1="0%" x2="10%" y2="100%">
-                                        <stop offset="0%" stop-color="#fff7ed" />
-                                        <stop offset="25%" stop-color="#facc15" />
-                                        <stop offset="60%" stop-color="#c2410c" />
-                                        <stop offset="100%" stop-color="#451a03" />
-                                    </linearGradient>
-
-                                    <radialGradient id="cookie3d-shadow-right" cx="50%" cy="50%" r="50%">
-                                        <stop offset="0%" stop-color="#270e02" stop-opacity="0.9" />
-                                        <stop offset="100%" stop-color="#270e02" stop-opacity="0" />
-                                    </radialGradient>
-                                </defs>
-
-                                <!-- Corpo Principal Direito -->
-                                <path d="M 120 25 C 175 25, 220 70, 220 120 C 220 170, 175 195, 125 170 C 155 130, 160 75, 120 25 Z" fill="url(#cookie3d-base-right)" filter="url(#glow-light)" />
-                                <!-- Dobra e Volume 3D -->
-                                <path d="M 120 25 C 160 75, 155 130, 125 170 C 140 155, 150 120, 130 80 Z" fill="url(#cookie3d-shadow-right)" />
-                                <!-- Brilho Superior 3D -->
-                                <path d="M 120 25 C 170 30, 210 75, 215 120 C 205 80, 165 40, 120 25 Z" fill="#ffffff" opacity="0.3" />
-                            </svg>
-                        </div>
-
+                    <!-- Lado Esquerdo do Biscoito (Formato de Asa Crocante) -->
+                    <div class="cookie-part cookie-left">
+                        <svg viewBox="0 0 150 200" class="cookie-svg">
+                            <defs>
+                                <linearGradient id="grad-left" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#fef08a" />
+                                    <stop offset="50%" stop-color="#f59e0b" />
+                                    <stop offset="100%" stop-color="#92400e" />
+                                </linearGradient>
+                                <filter id="shadow-3d">
+                                    <feDropShadow dx="-4" dy="6" stdDeviation="4" flood-opacity="0.4"/>
+                                </filter>
+                            </defs>
+                            <!-- Asa dobrada esquerda -->
+                            <path d="M 145 20 C 90 10, 20 40, 10 100 C 2 150, 50 185, 120 170 C 135 150, 140 100, 145 20 Z" fill="url(#grad-left)" filter="url(#shadow-3d)" />
+                            <!-- Linha de dobra 3D -->
+                            <path d="M 145 20 C 110 70, 100 120, 120 170" stroke="#78350f" stroke-width="4" fill="none" opacity="0.6"/>
+                            <!-- Detalhes de iluminação assada -->
+                            <path d="M 140 25 C 95 20, 30 45, 20 95" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.4"/>
+                        </svg>
                     </div>
 
-                    <!-- Sombra 3D no Chão -->
-                    <div class="cookie-shadow-3d"></div>
+                    <!-- Lado Direito do Biscoito (Formato de Asa Crocante) -->
+                    <div class="cookie-part cookie-right">
+                        <svg viewBox="0 0 150 200" class="cookie-svg">
+                            <defs>
+                                <linearGradient id="grad-right" x1="100%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#fef08a" />
+                                    <stop offset="50%" stop-color="#d97706" />
+                                    <stop offset="100%" stop-color="#78350f" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Asa dobrada direita -->
+                            <path d="M 5 20 C 60 10, 130 40, 140 100 C 148 150, 100 185, 30 170 C 15 150, 10 100, 5 20 Z" fill="url(#grad-right)" filter="url(#shadow-3d)" />
+                            <!-- Linha de dobra 3D -->
+                            <path d="M 5 20 C 40 70, 50 120, 30 170" stroke="#451a03" stroke-width="4" fill="none" opacity="0.6"/>
+                            <!-- Detalhes de iluminação assada -->
+                            <path d="M 10 25 C 55 20, 120 45, 130 95" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.3"/>
+                        </svg>
+                    </div>
+
+                    <!-- Sombra no Chão -->
+                    <div class="floor-shadow"></div>
 
                 </div>
             </div>
