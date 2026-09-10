@@ -77,38 +77,46 @@
             <button id="btn-prepare" class="btn-primary">Criar Meu Biscoito da Sorte</button>
         </section>
 
-        <!-- ETAPA 2: O BISCOITO DA SORTE (ANIMAÇÃO) -->
+        <!-- ETAPA 2: O BISCOITO DA SORTE (NOVO VISUAL SVG) -->
         <section id="step-cookie" class="card hidden">
             <p id="instruction-text" class="pulse-text">👇 Clique no biscoito para quebrá-lo 👇</p>
             
             <div class="cookie-wrapper" id="cookie-btn">
-                <!-- Desenho do Biscoito SVG (Lado Esquerdo e Direito separados para quebrar) -->
                 <div class="cookie-container">
+                    
+                    <!-- Papelzinho espreitando no meio -->
+                    <div class="paper-peek"></div>
+
+                    <!-- Lado Esquerdo do Biscoito -->
                     <svg class="cookie-svg cookie-left" viewBox="0 0 200 200">
-                        <path d="M 100,20 C 50,20 20,70 20,110 C 20,150 60,180 95,170 C 85,130 80,90 100,20 Z" fill="url(#cookie-grad-1)"/>
-                        <path d="M 95,170 C 100,140 100,80 100,20" fill="none" stroke="#d97706" stroke-width="3"/>
                         <defs>
-                            <linearGradient id="cookie-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#fde047" />
-                                <stop offset="50%" stop-color="#f59e0b" />
+                            <linearGradient id="gold-left" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#fef08a" />
+                                <stop offset="40%" stop-color="#f59e0b" />
                                 <stop offset="100%" stop-color="#b45309" />
                             </linearGradient>
                         </defs>
+                        <!-- Formato em meia-lua curva tradicional de biscoito da sorte -->
+                        <path d="M 100 25 C 60 25, 20 60, 20 105 C 20 145, 55 170, 95 150 C 70 110, 75 60, 100 25 Z" fill="url(#gold-left)" />
+                        <!-- Sombra da dobra interna -->
+                        <path d="M 95 150 C 70 110, 75 60, 100 25" stroke="#78350f" stroke-width="3" fill="none" opacity="0.4" />
                     </svg>
 
+                    <!-- Lado Direito do Biscoito -->
                     <svg class="cookie-svg cookie-right" viewBox="0 0 200 200">
-                        <path d="M 100,20 C 150,20 180,70 180,110 C 180,150 140,180 105,170 C 115,130 120,90 100,20 Z" fill="url(#cookie-grad-2)"/>
                         <defs>
-                            <linearGradient id="cookie-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#fde047" />
-                                <stop offset="50%" stop-color="#d97706" />
+                            <linearGradient id="gold-right" x1="100%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#fef08a" />
+                                <stop offset="40%" stop-color="#d97706" />
                                 <stop offset="100%" stop-color="#78350f" />
                             </linearGradient>
                         </defs>
+                        <!-- Formato em meia-lua curva espelhada -->
+                        <path d="M 100 25 C 140 25, 180 60, 180 105 C 180 145, 145 170, 105 150 C 130 110, 125 60, 100 25 Z" fill="url(#gold-right)" />
+                        <!-- Sombra da dobra interna -->
+                        <path d="M 105 150 C 130 110, 125 60, 100 25" stroke="#451a03" stroke-width="3" fill="none" opacity="0.4" />
                     </svg>
 
-                    <!-- Papel da Sorte oculta dentro -->
-                    <div class="fortune-paper-mini" id="paper-mini"></div>
                 </div>
             </div>
         </section>
