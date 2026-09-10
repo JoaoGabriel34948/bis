@@ -1,7 +1,7 @@
 :root {
     --bg-gradient: linear-gradient(135deg, #0f172a, #1e1b4b, #312e81);
-    --card-bg: rgba(255, 255, 255, 0.07);
-    --card-border: rgba(255, 255, 255, 0.15);
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --card-border: rgba(255, 255, 255, 0.18);
     --gold: #fbbf24;
     --text-color: #f8fafc;
     --paper-bg: #fffbeb;
@@ -15,88 +15,106 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
+html, body {
+    width: 100%;
+    min-height: 100vh;
     background: var(--bg-gradient);
     color: var(--text-color);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
     overflow-x: hidden;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONTAINER EM TELA CHEIA */
 .container {
     width: 100%;
-    max-width: 600px;
+    min-height: 100vh;
+    padding: 40px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     z-index: 1;
 }
 
+header {
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 1200px;
+}
+
 header h1 {
     font-family: 'Cinzel', serif;
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     color: var(--gold);
-    margin-bottom: 8px;
-    text-shadow: 0 0 12px rgba(251, 191, 36, 0.4);
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
 }
 
 header p {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: #cbd5e1;
-    margin-bottom: 25px;
 }
 
-/* Glassmorphism Cards */
+/* CARDS EXPANDIDOS (LARGURA TOTAL DA TELA) */
 .card {
+    width: 100%;
+    max-width: 1100px;
     background: var(--card-bg);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
     border: 1px solid var(--card-border);
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    margin-bottom: 20px;
+    border-radius: 24px;
+    padding: 40px 30px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
     transition: all 0.4s ease;
 }
 
 .card h2 {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
     color: var(--gold);
 }
 
 .input-group {
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .input-group label {
     display: block;
-    font-size: 0.9rem;
-    margin-bottom: 8px;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
     color: #e2e8f0;
+    font-weight: 500;
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 12px 15px;
-    border-radius: 10px;
+    padding: 16px 20px;
+    border-radius: 12px;
     border: 1px solid var(--card-border);
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
     color: #fff;
     outline: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 input[type="text"]:focus {
     border-color: var(--gold);
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
 }
 
-/* Chips / Tags */
+/* CHIPS / BOTÕES DISTRIBUÍDOS EM EM GRADE AMPLA */
 .chips-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+    width: 100%;
 }
 
 .chip input {
@@ -104,15 +122,24 @@ input[type="text"]:focus {
 }
 
 .chip span {
-    display: inline-block;
-    padding: 8px 14px;
-    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 20px;
+    background: rgba(255, 255, 255, 0.06);
     border: 1px solid var(--card-border);
-    border-radius: 20px;
-    font-size: 0.85rem;
+    border-radius: 14px;
+    font-size: 0.95rem;
     cursor: pointer;
     transition: all 0.3s ease;
     user-select: none;
+    text-align: center;
+}
+
+.chip span:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
 }
 
 .chip input:checked + span {
@@ -120,62 +147,76 @@ input[type="text"]:focus {
     color: #000;
     font-weight: 600;
     border-color: var(--gold);
-    box-shadow: 0 0 10px rgba(251, 191, 36, 0.4);
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.5);
 }
 
-/* Botões */
+/* BOTÕES PRINCIPAIS */
 button {
     cursor: pointer;
     border: none;
-    border-radius: 12px;
+    border-radius: 14px;
     font-weight: 600;
     transition: all 0.3s ease;
 }
 
 .btn-primary {
     width: 100%;
-    padding: 14px;
+    max-width: 400px;
+    padding: 16px;
     background: linear-gradient(45deg, #f59e0b, #fbbf24);
     color: #000;
-    font-size: 1rem;
-    margin-top: 10px;
+    font-size: 1.1rem;
+    margin: 15px auto 0 auto;
+    display: block;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.5);
 }
 
 .btn-secondary {
-    padding: 12px 25px;
+    padding: 14px 35px;
     background: var(--paper-text);
     color: var(--paper-bg);
-    font-size: 0.95rem;
-    margin-top: 20px;
+    font-size: 1rem;
+    margin-top: 25px;
 }
 
 .btn-secondary:hover {
     background: #451a03;
+    transform: translateY(-2px);
 }
 
-/* ÁREA E ESTRUTURA DO BISCOITO */
+/* BISCOITO 3D EM TELA AMPLA */
+.stage-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px;
+}
+
 .pulse-text {
     animation: pulse 1.5s infinite;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--gold);
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .cookie-stage {
-    perspective: 800px;
-    padding: 20px 0;
+    perspective: 1000px;
+    padding: 30px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .cookie-wrapper {
     position: relative;
-    width: 280px;
-    height: 200px;
-    margin: 0 auto;
+    width: 320px;
+    height: 230px;
     cursor: pointer;
     animation: float 3.5s ease-in-out infinite;
 }
@@ -183,8 +224,8 @@ button {
 .cookie-part {
     position: absolute;
     top: 0;
-    width: 145px;
-    height: 190px;
+    width: 165px;
+    height: 210px;
     transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s ease;
 }
 
@@ -203,22 +244,21 @@ button {
     height: 100%;
 }
 
-/* Tira de papel visível no centro */
 .paper-strip {
     position: absolute;
-    top: 75px;
-    left: 105px;
-    width: 70px;
-    height: 20px;
+    top: 85px;
+    left: 120px;
+    width: 80px;
+    height: 24px;
     background: #ffffff;
     color: #b45309;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 2px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    border-radius: 3px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     transform: rotate(-5deg);
     z-index: 1;
     letter-spacing: 1px;
@@ -227,100 +267,106 @@ button {
 
 .floor-shadow {
     position: absolute;
-    bottom: -10px;
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
-    height: 25px;
-    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, rgba(0,0,0,0) 70%);
+    width: 240px;
+    height: 30px;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6) 0%, rgba(0,0,0,0) 70%);
     border-radius: 50%;
     z-index: -1;
 }
 
-/* ANIMAÇÃO AO CLICAR E QUEBRAR O BISCOITO */
+/* ANIMAÇÃO DE QUEBRA 3D */
 .cookie-wrapper.open .cookie-left {
-    transform: translateX(-70px) rotate(-35deg) rotateY(-20deg);
+    transform: translateX(-90px) rotate(-40deg) rotateY(-25deg);
     opacity: 0.7;
 }
 
 .cookie-wrapper.open .cookie-right {
-    transform: translateX(70px) rotate(35deg) rotateY(20deg);
+    transform: translateX(90px) rotate(40deg) rotateY(25deg);
     opacity: 0.7;
 }
 
 .cookie-wrapper.open .paper-strip {
-    transform: scale(1.5) translateY(-40px);
-    opacity: 0.9;
+    transform: scale(1.6) translateY(-50px);
+    opacity: 0.95;
 }
 
-/* Papel Revelado */
+/* RESULTADO AMPLO DA MENSAGEM */
+.result-section {
+    width: 100%;
+    max-width: 900px;
+}
+
 .fortune-paper {
     background: var(--paper-bg);
     color: var(--paper-text);
-    padding: 30px 20px;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    border-left: 5px solid var(--gold);
-    border-right: 5px solid var(--gold);
+    padding: 50px 40px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    border-left: 8px solid var(--gold);
+    border-right: 8px solid var(--gold);
     animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 .paper-decoration {
     color: var(--gold);
-    letter-spacing: 5px;
-    margin-bottom: 10px;
+    letter-spacing: 8px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
 }
 
 .fortune-paper h3 {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     opacity: 0.8;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .quote {
     font-family: 'Caveat', cursive;
-    font-size: 1.7rem;
-    line-height: 1.3;
-    margin-bottom: 20px;
+    font-size: 2.2rem;
+    line-height: 1.4;
+    margin-bottom: 30px;
     font-weight: 600;
 }
 
 .lucky-numbers-container {
-    border-top: 1px dashed rgba(120, 53, 15, 0.3);
-    padding-top: 15px;
-    font-size: 0.85rem;
+    border-top: 2px dashed rgba(120, 53, 15, 0.3);
+    padding-top: 20px;
+    font-size: 1rem;
 }
 
 .numbers-box {
     display: flex;
     justify-content: center;
-    gap: 8px;
-    margin-top: 8px;
+    gap: 12px;
+    margin-top: 12px;
 }
 
 .num-ball {
     background: var(--paper-text);
     color: var(--paper-bg);
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 0.95rem;
 }
 
 .hidden {
     display: none !important;
 }
 
-/* Keyframes */
+/* KEYFRAMES */
 @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    50% { transform: translateY(-15px); }
 }
 
 @keyframes pulse {
@@ -329,6 +375,15 @@ button {
 }
 
 @keyframes popIn {
-    0% { transform: scale(0.5); opacity: 0; }
+    0% { transform: scale(0.6); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
+}
+
+/* RESPONSIVIDADE PARA CELULARES */
+@media (max-width: 600px) {
+    header h1 { font-size: 2rem; }
+    .card { padding: 25px 15px; }
+    .quote { font-size: 1.7rem; }
+    .fortune-paper { padding: 30px 20px; }
+    .chips-container { grid-template-columns: 1fr; }
 }
