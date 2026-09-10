@@ -47,7 +47,7 @@ header p {
     margin-bottom: 25px;
 }
 
-/* Card Glassmorphism */
+/* Glassmorphism Cards */
 .card {
     background: var(--card-bg);
     backdrop-filter: blur(12px);
@@ -92,7 +92,7 @@ input[type="text"]:focus {
     border-color: var(--gold);
 }
 
-/* Tag Chips */
+/* Chips / Tags */
 .chips-container {
     display: flex;
     flex-wrap: wrap;
@@ -158,7 +158,7 @@ button {
     background: #451a03;
 }
 
-/* AMBIENTE 3D E ANIMAÇÃO DO BISCOITO */
+/* ÁREA E ESTRUTURA DO BISCOITO */
 .pulse-text {
     animation: pulse 1.5s infinite;
     font-weight: 600;
@@ -166,89 +166,94 @@ button {
     margin-bottom: 20px;
 }
 
-/* Palco 3D com Perspectiva Real */
 .cookie-stage {
-    perspective: 1000px;
+    perspective: 800px;
     padding: 20px 0;
 }
 
 .cookie-wrapper {
     position: relative;
-    width: 240px;
-    height: 220px;
+    width: 280px;
+    height: 200px;
     margin: 0 auto;
     cursor: pointer;
-    transform-style: preserve-3d;
+    animation: float 3.5s ease-in-out infinite;
 }
 
-.cookie-3d-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    animation: float3D 3.5s ease-in-out infinite;
-}
-
-.cookie-half {
+.cookie-part {
     position: absolute;
     top: 0;
+    width: 145px;
+    height: 190px;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s ease;
+}
+
+.cookie-left {
     left: 0;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s ease;
+    transform-origin: right center;
 }
 
-.cookie-svg-3d {
+.cookie-right {
+    right: 0;
+    transform-origin: left center;
+}
+
+.cookie-svg {
     width: 100%;
     height: 100%;
 }
 
-/* Papel Interno 3D */
-.paper-peek-3d {
+/* Tira de papel visível no centro */
+.paper-strip {
     position: absolute;
-    top: 100px;
-    left: 85px;
+    top: 75px;
+    left: 105px;
     width: 70px;
-    height: 18px;
-    background: linear-gradient(90deg, #f8fafc, #ffffff, #e2e8f0);
+    height: 20px;
+    background: #ffffff;
+    color: #b45309;
+    font-size: 0.65rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 2px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    transform: rotate(-12deg) translateZ(10px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transform: rotate(-5deg);
     z-index: 1;
+    letter-spacing: 1px;
     transition: transform 0.8s ease;
 }
 
-/* Sombra 3D projetada no piso */
-.cookie-shadow-3d {
+.floor-shadow {
     position: absolute;
-    bottom: -15px;
+    bottom: -10px;
     left: 50%;
-    transform: translateX(-50%) rotateX(75deg);
-    width: 160px;
-    height: 50px;
-    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
+    transform: translateX(-50%);
+    width: 200px;
+    height: 25px;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, rgba(0,0,0,0) 70%);
     border-radius: 50%;
-    animation: shadowPulse 3.5s ease-in-out infinite;
+    z-index: -1;
 }
 
-/* ANIMAÇÃO 3D DE QUEBRA AO CLICAR */
-.cookie-wrapper.open .left-half {
-    transform: translateX(-90px) translateY(-10px) translateZ(-40px) rotateY(-45deg) rotateX(-20deg);
-    opacity: 0.6;
+/* ANIMAÇÃO AO CLICAR E QUEBRAR O BISCOITO */
+.cookie-wrapper.open .cookie-left {
+    transform: translateX(-70px) rotate(-35deg) rotateY(-20deg);
+    opacity: 0.7;
 }
 
-.cookie-wrapper.open .right-half {
-    transform: translateX(90px) translateY(-10px) translateZ(-40px) rotateY(45deg) rotateX(-20deg);
-    opacity: 0.6;
+.cookie-wrapper.open .cookie-right {
+    transform: translateX(70px) rotate(35deg) rotateY(20deg);
+    opacity: 0.7;
 }
 
-.cookie-wrapper.open .paper-peek-3d {
-    transform: scale(1.4) translateY(-30px) rotate(0deg) translateZ(50px);
+.cookie-wrapper.open .paper-strip {
+    transform: scale(1.5) translateY(-40px);
     opacity: 0.9;
 }
 
-/* Papel da Mensagem Final */
+/* Papel Revelado */
 .fortune-paper {
     background: var(--paper-bg);
     color: var(--paper-text);
@@ -312,19 +317,10 @@ button {
     display: none !important;
 }
 
-/* Keyframes 3D */
-@keyframes float3D {
-    0%, 100% { 
-        transform: translateY(0px) rotateX(10deg) rotateY(0deg); 
-    }
-    50% { 
-        transform: translateY(-12px) rotateX(15deg) rotateY(8deg); 
-    }
-}
-
-@keyframes shadowPulse {
-    0%, 100% { transform: translateX(-50%) rotateX(75deg) scale(1); opacity: 0.6; }
-    50% { transform: translateX(-50%) rotateX(75deg) scale(0.8); opacity: 0.3; }
+/* Keyframes */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
 }
 
 @keyframes pulse {
