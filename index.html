@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biscoito da Sorte Personalizado</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Caveat:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="stars"></div>
+    <div class="container">
+        
+        <!-- CABEÇALHO -->
+        <header>
+            <h1>✨ Biscoito da Sorte ✨</h1>
+            <p>Conecte-se com sua energia e receba a mensagem certa para o seu momento.</p>
+        </header>
+
+        <!-- ETAPA 1: FORMULÁRIO DE PERSONALIZAÇÃO -->
+        <section id="step-form" class="card">
+            <h2>Personalize sua Revelação</h2>
+            
+            <div class="input-group">
+                <label for="user-name">Seu Nome (opcional):</label>
+                <input type="text" id="user-name" placeholder="Ex: Maria">
+            </div>
+
+            <div class="input-group">
+                <label>Em qual área da vida você precisa de orientação hoje?</label>
+                <div class="chips-container">
+                    <label class="chip">
+                        <input type="checkbox" name="category" value="carreira">
+                        <span>💼 Carreira & Finanças</span>
+                    </label>
+                    <label class="chip">
+                        <input type="checkbox" name="category" value="amor">
+                        <span>❤️ Amor & Relacionamentos</span>
+                    </label>
+                    <label class="chip">
+                        <input type="checkbox" name="category" value="crescimento">
+                        <span>🌱 Crescimento Pessoal</span>
+                    </label>
+                    <label class="chip">
+                        <input type="checkbox" name="category" value="saude">
+                        <span>🧠 Paz & Saúde Mental</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Como você se sente no momento?</label>
+                <div class="chips-container">
+                    <label class="chip">
+                        <input type="checkbox" name="mood" value="ansioso">
+                        <span>⚡ Ansioso / Inseguro</span>
+                    </label>
+                    <label class="chip">
+                        <input type="checkbox" name="mood" value="motivado">
+                        <span>🔥 Motivado / Pronto</span>
+                    </label>
+                    <label class="chip">
+                        <input type="checkbox" name="mood" value="cansado">
+                        <span>🛋️ Cansado / Reflexivo</span>
+                    </label>
+                    <label class="chip">
+                        <input type="checkbox" name="mood" value="esperancoso">
+                        <span>✨ Esperançoso</span>
+                    </label>
+                </div>
+            </div>
+
+            <button id="btn-prepare" class="btn-primary">Criar Meu Biscoito da Sorte</button>
+        </section>
+
+        <!-- ETAPA 2: O BISCOITO DA SORTE (ANIMAÇÃO) -->
+        <section id="step-cookie" class="card hidden">
+            <p id="instruction-text" class="pulse-text">👇 Clique no biscoito para quebrá-lo 👇</p>
+            
+            <div class="cookie-wrapper" id="cookie-btn">
+                <!-- Desenho do Biscoito SVG (Lado Esquerdo e Direito separados para quebrar) -->
+                <div class="cookie-container">
+                    <svg class="cookie-svg cookie-left" viewBox="0 0 200 200">
+                        <path d="M 100,20 C 50,20 20,70 20,110 C 20,150 60,180 95,170 C 85,130 80,90 100,20 Z" fill="url(#cookie-grad-1)"/>
+                        <path d="M 95,170 C 100,140 100,80 100,20" fill="none" stroke="#d97706" stroke-width="3"/>
+                        <defs>
+                            <linearGradient id="cookie-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#fde047" />
+                                <stop offset="50%" stop-color="#f59e0b" />
+                                <stop offset="100%" stop-color="#b45309" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <svg class="cookie-svg cookie-right" viewBox="0 0 200 200">
+                        <path d="M 100,20 C 150,20 180,70 180,110 C 180,150 140,180 105,170 C 115,130 120,90 100,20 Z" fill="url(#cookie-grad-2)"/>
+                        <defs>
+                            <linearGradient id="cookie-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#fde047" />
+                                <stop offset="50%" stop-color="#d97706" />
+                                <stop offset="100%" stop-color="#78350f" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <!-- Papel da Sorte oculta dentro -->
+                    <div class="fortune-paper-mini" id="paper-mini"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ETAPA 3: RESULTADO DA MENSAGEM REVELADA -->
+        <section id="step-result" class="hidden">
+            <div class="fortune-paper">
+                <div class="paper-decoration">★ ★ ★</div>
+                <h3 id="result-greeting">Sua Mensagem:</h3>
+                <p id="result-message" class="quote">"..."</p>
+                
+                <div class="lucky-numbers-container">
+                    <span>Seus números da sorte:</span>
+                    <div id="lucky-numbers" class="numbers-box"></div>
+                </div>
+
+                <button id="btn-restart" class="btn-secondary">Abrir Outro Biscoito 🥠</button>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
