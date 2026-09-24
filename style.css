@@ -277,21 +277,7 @@ button {
     z-index: -1;
 }
 
-/* ANIMAÇÃO DE QUEBRA 3D */
-.cookie-wrapper.open .cookie-left {
-    transform: translateX(-90px) rotate(-40deg) rotateY(-25deg);
-    opacity: 0.7;
-}
 
-.cookie-wrapper.open .cookie-right {
-    transform: translateX(90px) rotate(40deg) rotateY(25deg);
-    opacity: 0.7;
-}
-
-.cookie-wrapper.open .paper-strip {
-    transform: scale(1.6) translateY(-50px);
-    opacity: 0.95;
-}
 
 /* RESULTADO AMPLO DA MENSAGEM */
 .result-section {
