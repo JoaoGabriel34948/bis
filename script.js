@@ -48,54 +48,6 @@ const fortunesDatabase = {
         "Sua imunidade e vitalidade fortalecem quando você pratica a gratidão.",
         "Um hábito saudável adotado hoje trará anos de leveza no futuro."
     ],
-    ansioso: [
-        "Respire fundo. O futuro se constrói um passo de cada vez, viva o hoje.",
-        "Tudo o que é seu encontrará um caminho até você. Acalme o coração.",
-        "A maioria das tempestades que prevemos só existem na nossa mente.",
-        "Solte o controle do incontrolável e sinta a leveza de confiar no tempo.",
-        "Você já superou 100% dos seus piores dias até agora. Você vai superar este também.",
-        "Esta sensação é temporária. A clareza e a paz retornarão em breve.",
-        "Não tente resolver o ano inteiro hoje; resolva apenas o momento presente.",
-        "Sua mente merece uma pausa. Feche os olhos e inspire tranquilidade.",
-        "A incerteza de hoje é apenas o espaço onde o milagre de amanhã se prepara.",
-        "Você é infinitamente maior e mais forte do que qualquer inquietação."
-    ],
-    motivado: [
-        "Sua energia atual é contagiante! Use esse impulso para realizar seus grandes projetos.",
-        "O universo conspira a favor de quem age com determinação.",
-        "Nada pode deter alguém que sabe exatamente para onde está indo.",
-        "Sua paixão é o combustível que transformará suas ideias em realidade.",
-        "Aproveite esta onda de motivação para dar o primeiro passo naquele sonho antigo.",
-        "O topo da montanha reserva a vista mais bonita para quem não desistiu na subida.",
-        "Sua ousadia de hoje será a história de inspiração de amanhã.",
-        "Foque na meta e ignore os ruídos ao redor; seu sucesso é inevitável.",
-        "Transforme a sua fome de vencer no plano de ação mais bem estruturado da sua vida.",
-        "Você nasceu para brilhar. Não diminua sua luz por causa de ninguém."
-    ],
-    cansado: [
-        "Recarregar as energias não é desistir, é se preparar para voos mais altos.",
-        "Respeite o seu tempo. A tempestade passa e o sol sempre volta.",
-        "Diga 'não' sem culpa para proteger o seu espaço e o seu descanso.",
-        "A exaustão é um sinal do seu corpo pedindo carinho e uma pausa.",
-        "Não se cobre tanto. O simples fato de continuar tentando já faz de você um vitorioso.",
-        "Hoje, apenas seja generoso consigo mesmo e desfrute de um momento de descanso.",
-        "Mesmo as árvores mais fortes perdem as folhas no inverno para florescerem na primavera.",
-        "Acalme a mente. Amanhã o dia nascerá renovado e cheio de novas possibilidades.",
-        "Sua jornada é uma maratona, não uma corrida de 100 metros. Ajuste o ritmo.",
-        "Deite a cabeça no travesseiro com a certeza de que fez o seu melhor por hoje."
-    ],
-    esperancoso: [
-        "Sua fé e otimismo atrairão exatamente os milagres que você espera.",
-        "Coisas incríveis acontecem para aqueles que nunca perdem a esperança.",
-        "O universo tem uma maneira linda de honrar quem acredita em dias melhores.",
-        "Sua postura positiva está sintonizando a sua vida na frequência das bênçãos.",
-        "A semente da esperança plantada hoje será uma colheita abundante muito em breve.",
-        "Mantenha o sorriso; o destino está preparando uma surpresa maravilhosa.",
-        "Acreditar no invisível abrirá caminhos para você alcançar o impossível.",
-        "A luz que você carrega dentro do peito ilumina até os dias mais nublados.",
-        "A vida retribui em dobro a quem olha para o amanhã com entusiasmo.",
-        "Um grande desejo do seu coração está se alinhando para se realizar."
-    ],
     geral: [
         "A sorte favorece a mente bem preparada.",
         "Acredite no processo e confie na sua jornada.",
