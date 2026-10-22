@@ -1,4 +1,4 @@
-
+ 
 const fortunesDatabase = {
     carreira: [
         "A oportunidade que você procura está escondida no desafio que você evita.",
