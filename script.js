@@ -1,4 +1,4 @@
-// BANCO DE DADOS COMPLETO COM 10 FRASES POR CATEGORIA E HUMOR
+
 const fortunesDatabase = {
     carreira: [
         "A oportunidade que você procura está escondida no desafio que você evita.",
@@ -62,7 +62,7 @@ const fortunesDatabase = {
     ]
 };
 
-// ELEMENTOS DOM
+
 const stepForm = document.getElementById('step-form');
 const stepCookie = document.getElementById('step-cookie');
 const stepResult = document.getElementById('step-result');
@@ -78,7 +78,7 @@ const luckyNumbersBox = document.getElementById('lucky-numbers');
 
 let userChoices = {};
 
-// EVENTO: Salvar preferências e ir para o Biscoito
+
 btnPrepare.addEventListener('click', () => {
     const selectedCategories = Array.from(document.querySelectorAll('input[name="category"]:checked')).map(el => el.value);
     const selectedMoods = Array.from(document.querySelectorAll('input[name="mood"]:checked')).map(el => el.value);
@@ -93,7 +93,7 @@ btnPrepare.addEventListener('click', () => {
     stepCookie.classList.remove('hidden');
 });
 
-// EVENTO: Clicar no Biscoito para Quebrar
+
 cookieBtn.addEventListener('click', () => {
     if (cookieBtn.classList.contains('open')) return;
 
@@ -125,7 +125,7 @@ cookieBtn.addEventListener('click', () => {
     }, 850);
 });
 
-// EVENTO: Reiniciar
+
 btnRestart.addEventListener('click', () => {
     cookieBtn.classList.remove('open');
 
@@ -133,7 +133,7 @@ btnRestart.addEventListener('click', () => {
     stepForm.classList.remove('hidden');
 });
 
-// GERAR MENSAGEM PERSONALIZADA
+
 function generateFortune(choices) {
     let pool = [];
 
@@ -157,7 +157,7 @@ function generateFortune(choices) {
     return pool[randomIndex];
 }
 
-// GERAR NÚMEROS DA SORTE (1 a 60)
+
 function generateLuckyNumbers() {
     const numbers = new Set();
     while (numbers.size < 6) {
